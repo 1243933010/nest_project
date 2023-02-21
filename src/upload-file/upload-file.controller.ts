@@ -17,9 +17,9 @@ export class UploadFileController {
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   upload(@UploadedFile() file){
-    console.log(file);
+    // console.log(file);
     return {
-      
+      name:'123456'
     }
   }
 

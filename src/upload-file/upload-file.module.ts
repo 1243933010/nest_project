@@ -10,7 +10,7 @@ import { extname, join } from 'path';
     storage:diskStorage({
       destination:join(__dirname,'../images'),
       filename:(_,file,callback)=>{
-        console.log(new Date().getTime(),extname(file.originalname),'---')
+        // console.log(new Date().getTime(),extname(file.originalname),'---')
         const fileName = `${new Date().getTime()+ extname(file.originalname)}`;
         return callback(null,fileName);
       }

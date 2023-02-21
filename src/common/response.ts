@@ -8,11 +8,11 @@ interface Data<T>{
 @Injectable()
 export class Respon<T> implements NestInterceptor{
         intercept(context, next: CallHandler):Observable<Data<T>>{
-            
             return next.handle().pipe(map(data=>{
+                console.log(data)
                 return {
-                    data: data?.data,
-                    code:data.message?data.code:0,
+                    data,
+                    code:data.code?data.code:0,
                     message:data.message?data.message:'success'
                 }
             }))

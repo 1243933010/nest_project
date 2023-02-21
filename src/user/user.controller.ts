@@ -47,7 +47,7 @@ export class UserController {
   // if(body.code?.toLocaleLowerCase()!==session.code.toLocaleLowerCase()){
   //   return{code:400,message:'验证码错误'};
   // }
-  return{message:'验证码正确'}
+  return {message:'验证码正确'}
  }
 
   @Get()
