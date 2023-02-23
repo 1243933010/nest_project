@@ -8,7 +8,7 @@ export class HttpFilter implements ExceptionFilter{
         const request = ctx.getRequest<Request>();
         const response = ctx.getResponse<Response>();
         const status = exception.getStatus();
-        // console.log(exception.message,'&&&')
+        console.log(exception,'&&&')
         response.status(status).json({
             data:exception,
             time:new Date().getTime(),

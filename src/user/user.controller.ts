@@ -1,17 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete,Request,Query,Headers,HttpCode,Req,Res ,Session, Version, Header} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete,Request,Query,Headers,HttpCode,Req,Res ,Session, Version, Header,UseGuards} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import * as svgCaptcha from 'svg-captcha';
+import {RoleGuard} from './role/role.guard'
 // import session from 'express-session';
-
 // @Controller('user')
+
+
 
 @Controller({
   path:'user',
   version:'1'
 })
-
+@UseGuards(RoleGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
