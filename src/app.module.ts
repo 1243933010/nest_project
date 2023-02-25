@@ -8,6 +8,7 @@ import { UploadFileModule } from './upload-file/upload-file.module';
 import { ConduitModule } from './conduit/conduit.module';
 import { LoginModule } from './login/login.module';
 import { SpiderModule } from './spider/spider.module';
+import { TableModule } from './table/table.module';
 
 @Module({
   imports: [UserModule, UploadFileModule, ConduitModule, LoginModule, SpiderModule,
@@ -23,7 +24,8 @@ import { SpiderModule } from './spider/spider.module';
     retryDelay:500,
     retryAttempts:10,
     autoLoadEntities:true
-  })],
+  }),
+  TableModule],
   controllers: [AppController],
   providers: [AppService, UserService],
 })
