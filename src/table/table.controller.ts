@@ -38,4 +38,10 @@ export class TableController {
   remove(@Param('id') id: string) {
     return this.tableService.remove(+id);
   }
+  
+  @Post('tag/add')
+  addTags(@Body() body:{tags:Array<{name:string,color:string}>,id:number}){
+    console.log(body)
+    return this.tableService.addTags(body);
+  }
 }
